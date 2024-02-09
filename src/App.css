@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+body {
+  font-family: sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Container styles */
+.pricing-plans {
+  background-color: #137ded;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 2rem;
+  padding: 10px;
+  /* max-width: 80%; */
+  max-width: 75%;
+  margin: 50px auto;
+}
+
+/* Individual plan card styles */
+.plan-card {
+  background-color: white;
+  text-align: center;
+  border-radius: 5%;
+  padding: 20px 10px 10px 10px;
+  width: 250px;
+}
+
+.plan-card > h4 {
+  letter-spacing: 1px;
+  color: #9fa0a1;
+  margin: 0;
+}
+
+.plan-card > h2 {
+  font-size: 2.6rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 10px;
+  padding-bottom: 15px;
+  border-bottom: 0.5px solid rgba(172, 165, 165, 0.4);
+}
+
+/* List styles */
+ul {
+  padding-top: 10px;
+  list-style: none;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(105, 105, 105);
+}
+
+ul li:before {
+  /* content: "\1F5F8"; */
+  content: "\2714";
+  float: left;
+  margin-left: -50px;
+  position: relative;
+  left: 30px;
+}
+
+ul li {
+  /* list-style-type: &#x2713; */
+  margin-bottom: 10px;
+  position: relative;
+  right: 15px;
+}
+/* Set text opacity for specific features */
+.plan-card:nth-child(1) ul li:nth-last-child(-n + 4),
+.plan-card:nth-child(2) ul li:nth-last-child(-n + 1) {
+  opacity: 0.2;
+}
+
+.plan-card:nth-child(1) ul li:nth-last-child(-n + 4):before,
+.plan-card:nth-child(2) ul li:nth-last-child(-n + 1):before {
+  content: "\1F7AC";
+}
+
+.plan-card > button {
+  background-color: #137ded;
+  border: none;
   color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  width: 95%;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
 }
 
-.App-link {
-  color: #61dafb;
+.plan-card > button:hover {
+  background-color: rgb(123, 174, 231);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive styles for smaller screens */
+
+@media (max-width: 768px) {
+  /* .pricing-plans {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  } */
+
+  .plan-card {
+    max-width: 80%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .plan-card > * {
+    word-wrap: break-word;
+  }
+
+  .plan-card > button {
+    max-width: 95%;
   }
 }
